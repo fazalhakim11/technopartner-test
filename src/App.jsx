@@ -1,4 +1,3 @@
-import "./App.css";
 import Router from "./router"
 import Container from "./components/container"
 

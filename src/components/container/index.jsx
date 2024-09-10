@@ -1,7 +1,7 @@
 
 const index = ({ children }) => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center max-w-[450px]">
       {children}
     </div>
   )
