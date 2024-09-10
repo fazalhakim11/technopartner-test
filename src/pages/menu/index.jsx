@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { getMenu } from "../../stores/slices/menuSlice";
+import Navbar from "../../components/navbar";
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -11,7 +13,8 @@ const Menu = () => {
   }, []);
 
   return (
-    <div className="w-[100%]">
+    <div className="w-[100%] relative">
+        <Navbar/>
       <header className="text-center py-6 text-xl font-semibold">MENU</header>
       <main>
         <div className="overflow-x-auto hide-scrollbar">

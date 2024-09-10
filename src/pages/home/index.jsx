@@ -7,6 +7,7 @@ import ProfileCard from "../../components/profileCard";
 import Banner from "../../components/banner";
 import { getData } from "../../stores/slices/profileSlice";
 import QrCode from "../../components/qr";
+import Navbar from "../../components/navbar";
 
 const Home = () => {
   const data = useSelector((state) => state.profile.profile);
@@ -28,6 +29,7 @@ const Home = () => {
 
   return (
     <div className="w-[100%] relative">
+      <Navbar/>
       <ReactPullToRefresh onRefresh={handleRefresh}>
         {show && <QrCode image={data.qrcode} clickQR={handleQRClicked} />}
         <header>
