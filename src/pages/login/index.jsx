@@ -1,9 +1,18 @@
+import { useDispatch } from "react-redux";
 import Logo from "../../assets/logo_technopartner.png";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { loginUser } from "../../stores/slices/loginSlice";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submit");
+    dispatch(loginUser({ username, password }, navigate));
   };
   return (
     <main>
@@ -24,7 +33,9 @@ const Login = () => {
             id="email"
             name="email"
             type="email"
+            value={username}
             className="focus:outline-none px-3 bg-[#ffffff] drop-shadow h-[40px] w-[75%] rounded-lg mb-5"
+            onChange={(e) => setUsername(e.target.value)}
           />
           <label htmlFor="password" className="text-[#b5b5b5] mb-3 w-max">
             Password
@@ -33,7 +44,9 @@ const Login = () => {
             id="password"
             name="password"
             type="password"
+            value={password}
             className="focus:outline-none px-3 bg-[#ffffff] drop-shadow h-[40px] w-[75%] rounded-lg mb-10"
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button
             type="submit"

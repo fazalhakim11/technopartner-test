@@ -7,9 +7,11 @@ import Navbar from "../../components/navbar";
 const Menu = () => {
   const dispatch = useDispatch();
   const menu = useSelector((state) => state.menu.menu);
+  const token = useSelector((state)=> state.login.token)
+  const token_type = useSelector((state)=> state.login.token_type)
 
   useEffect(() => {
-    dispatch(getMenu());
+    dispatch(getMenu(token, token_type));
   }, []);
 
   return (
