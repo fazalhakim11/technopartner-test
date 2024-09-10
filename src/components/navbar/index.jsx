@@ -7,7 +7,7 @@ import menu2 from "../../assets/menu2.png";
 const Navbar = () => {
   const location = useLocation();
   return (
-    <div className="bg-white fixed w-[100%] flex z-10 inset-x-0 bottom-0 justify-around py-3">
+    <div className="bg-white fixed max-w-[450px] md:mx-auto flex z-10 inset-x-0 bottom-0 justify-around py-3">
       <div>
         <Link to="/home">
           {location.pathname === "/home" ? (
