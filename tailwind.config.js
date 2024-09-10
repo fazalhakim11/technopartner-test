@@ -11,5 +11,17 @@ export default {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.hide-scrollbar': {
+          '-webkit-overflow-scrolling': 'touch',
+          '::-webkit-scrollbar': {
+            display: 'none',
+          },
+          'scrollbar-width': 'none',
+        },
+      });
+    },
+  ],
 };

@@ -1,7 +1,7 @@
 const QrCode = ({ image, clickQR }) => {
   return (
-    <div className="absolute z-10 bg-white h-[100vh] w-[100%] flex flex-col items-center p-3">
-      <button onClick={clickQR} className="pt-5 self-end">
+    <div className="absolute z-10 bg-white h-[100vh] w-[100%] flex flex-col items-center pt-0 p-3">
+      <button onClick={clickQR} className="pt-5 self-end mb-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
