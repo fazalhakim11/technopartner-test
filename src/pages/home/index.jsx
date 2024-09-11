@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ReactPullToRefresh from "react-pull-to-refresh";
 
@@ -11,17 +11,11 @@ import Navbar from "../../components/navbar";
 
 const Home = () => {
   const data = useSelector((state) => state.profile.profile);
-  const token = useSelector((state)=> state.login.token)
-  const token_type = useSelector((state)=> state.login.token_type)
   const dispatch = useDispatch();
 
   const handleRefresh = () => {
     dispatch(getData());
   };
-
-  useEffect(() => {
-    dispatch(getData(token, token_type));
-  }, []);
 
   const [show, setShow] = useState(false);
 

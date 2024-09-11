@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { getData } from "./profileSlice";
 
 const loginSlice = createSlice({
   name: "login",
@@ -27,6 +28,7 @@ export const loginUser = (credentials, navigate) => async (dispatch) => {
     });
     dispatch(setToken(res.data.access_token));
     dispatch(setTokenType(res.data.token_type));
+    dispatch(getData(res.data.access_token, res.data.token_type))
     console.log("End");
     navigate("/home");
   } catch (error) {
